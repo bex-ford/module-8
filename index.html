@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <link rel="stylesheet" href="reset.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,7 +22,7 @@
     >
       <h1>Weather Dashboard</h1>
     </header>
-    <br />
+
     <!-- max-width for ultra wide resolutions -->
     <div class="container-fluid" style="max-width: 1400px">
       <div class="row">
@@ -46,18 +46,18 @@
                 </div>
               </div>
             </div>
+            <!--Search button-->
+            <button
+              type="submit"
+              class="col-sm-12 btn btn-primary"
+              id="search-button"
+            >
+              Search
+            </button>
           </form>
-          <button
-            type="submit"
-            class="col-sm-12 btn btn-primary"
-            id="search-button"
-          >
-            Search
-          </button>
-          <ul class="list-group"></ul>
-          <div class="list-group" id="history"></div>
         </aside>
 
+        <!--Current weather-->
         <div class="col-lg-9 pb-9">
           <section
             id="today"
@@ -65,16 +65,11 @@
             role="region"
             aria-live="polite"
           ></section>
-          <section
-            id="forecast"
-            class="row mt-3"
-            role="region"
-            aria-live="polite"
-          ></section>
           <div class="col-sm-12">
             <div class="row ml-2 border border-dark sqaure">
               <div class="col-sm-12" id="current-weather">
                 <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                <div class="weather-icon"><img src="" /></div>
                 <p>
                   Temperature:<span class="current" id="temperature"></span>
                 </p>
@@ -83,56 +78,65 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br />
-      <!-- 5-Day Forecast -->
-      <div class="col-sm-12" id="future-weather" style>
-        <h3>5-Day Forecast:</h3>
-        <div class="row text-light">
-          <div
-            class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
-          >
-            <p>Temp:<span id="temp0"></span></p>
-            <p>Wind:<span id="wind0"></span></p>
-            <p>Humidity:<span id="humidity0"></span></p>
-          </div>
-          <div
-            class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
-          >
-            <p>Temp:<span id="temp1"></span></p>
-            <p>Wind:<span id="wind1"></span></p>
-            <p>Humidity:<span id="humidity1"></span></p>
-          </div>
-          <div
-            class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
-          >
-            <p>Temp:<span id="temp2"></span></p>
-            <p>Wind:<span id="wind2"></span></p>
-            <p>Humidity:<span id="humidity2"></span></p>
-          </div>
-          <div
-            class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
-          >
-            <p>Temp:<span id="temp3"></span></p>
-            <p>Wind:<span id="wind3"></span></p>
-            <p>Humidity:<span id="humidity3"></span></p>
-          </div>
-          <div
-            class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
-          >
-            <p>Temp:<span id="temp4"></span></p>
-            <p>Wind:<span id="wind4"></span></p>
-            <p>Humidity:<span id="humidity4"></span></p>
+          <br />
+          <!--5-day Forecast-->
+          <div class="col-sm-12" id="future-weather">
+            <h3>5-Day Forecast:</h3>
+            <div class="row text-light">
+              <div
+                class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
+              >
+                <p id="date0"></p>
+                <p id="img0"></p>
+                <p>Temp:<span id="temp0"></span></p>
+                <p>Wind:<span id="wind0"></span></p>
+                <p>Humidity:<span id="humidity0"></span></p>
+              </div>
+              <div
+                class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 square"
+              >
+                <p id="date1"></p>
+                <p id="img1"></p>
+                <p>Temp:<span id="temp1"></span></p>
+                <p>Wind:<span id="wind1"></span></p>
+                <p>Humidity:<span id="humidity1"></span></p>
+              </div>
+              <div
+                class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
+              >
+                <p id="date2"></p>
+                <p id="img2"></p>
+                <p>Temp:<span id="temp2"></span></p>
+                <p>Wind:<span id="wind2"></span></p>
+                <p>Humidity:<span id="humidity2"></span></p>
+              </div>
+              <div
+                class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
+              >
+                <p id="date3"></p>
+                <p id="img3"></p>
+                <p>Temp:<span id="temp3"></span></p>
+                <p>Wind:<span id="wind2"></span></p>
+                <p>Humidity:<span id="humidity3"></span></p>
+              </div>
+              <div
+                class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 sqaure"
+              >
+                <p id="fate4"></p>
+                <p id="img4"></p>
+                <p>Temp:<span id="temp4"></span></p>
+                <p>Wind:<span id="wind4"></span></p>
+                <p>Humidity:<span id="humidity4"></span></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
